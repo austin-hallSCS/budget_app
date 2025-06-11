@@ -1,7 +1,7 @@
 /.venv/
 /__pycache__/
 /budget/__pycache__/
-/budget/controller/__pycache__/
+/budget/controllers/__pycache__/
 /budget/models/__pycache__/
 /budget/views/__pycache__/
 /.env
