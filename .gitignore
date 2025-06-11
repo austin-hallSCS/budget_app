@@ -1,9 +1,5 @@
-/.venv/
-/__pycache__/
-/budget/__pycache__/
-/budget/controllers/__pycache__/
-/budget/models/__pycache__/
-/budget/views/__pycache__/
-/.env
-/database.db
-/2025-05.csv
+.venv/
+__pycache__/
+.env
+database.db
+2025-05.csv
