@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1>{% block title %}Transactions{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <table class="table">
+        <thead class="table_header">
+            <tr>
+                <th>Date</th>
+                <th>Merchant</th>
+                <th>Amount</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction, category in transactions %}
+            <tr class="table_row">
+                <td>{{ transaction["date"] }}</td>
+                <td>{{ transaction["name"] }}</td>
+                <td>{{ transaction["amount"] }}</td>
+                <td>{{ category["name"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
