@@ -10,17 +10,19 @@
             <tr>
                 <th>Date</th>
                 <th>Merchant</th>
+                <th>Description</th>
                 <th>Amount</th>
                 <th>Category</th>
             </tr>
         </thead>
         <tbody>
-            {% for transaction, category in transactions %}
+            {% for transaction in transactions %}
             <tr class="table_row">
-                <td>{{ transaction["date"] }}</td>
-                <td>{{ transaction["name"] }}</td>
-                <td>{{ transaction["amount"] }}</td>
-                <td>{{ category["name"] }}</td>
+                <td>{{ transaction.date }}</td>
+                <td>{{ transaction.simplename }}</td>
+                <td>{{ transaction.description }}</td>
+                <td>{{ transaction.amount }}</td>
+                <td>{{ transaction.name }}</td>
             </tr>
             {% endfor %}
         </tbody>
