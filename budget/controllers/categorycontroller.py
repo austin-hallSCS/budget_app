@@ -1,7 +1,7 @@
 from sqlalchemy import select
 
-from extensions import db
-from models import Category, Merchant, Transaction
+from budget.extensions import db
+from budget.models.models import Category, Merchant, Transaction
 
 def Get_Category_ID(name):
     result = db.session.execute(select(Category).where(Category.name == name)).first()

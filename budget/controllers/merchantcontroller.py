@@ -1,9 +1,8 @@
 from sqlalchemy import select
 
 from budget.extensions import db
-from models import Category, Merchant, Transaction
-from controllers import categorycontroller
-
+from budget.models.models import Category, Merchant, Transaction
+from budget.controllers import categorycontroller
 def Get_All_Merchants_View():
     result = db.session.query(Merchant, Category).outerjoin(Category).all()
     return result

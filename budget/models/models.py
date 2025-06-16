@@ -43,4 +43,4 @@ class Transaction(db.Model):
     category_id = db.Column(db.Integer, db.ForeignKey('category_table.category_id'))
 
     def __repr__(self):
-        return f"{self.date} - {self.name}: {self.amount}"
+        return f"{self.date} - {self.description}: {self.amount}"
