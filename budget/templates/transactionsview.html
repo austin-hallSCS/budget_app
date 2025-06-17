@@ -1,51 +1,61 @@
 {% extends "base.html" %}
 
-{% block header %}
-    <h1>{% block title %}Transactions{% endblock %}</h1>
-{% endblock %}
-
 {% block content %}
     <form method="post">
-        <label for="date">Date</label>
-        <input type="date" name="date" id="date" required>
-        <label for="amount">Amount</label>
-        <input type="number" step="0.01" name="amount" id="amount" required>
-        <label for="description">Description</label>
-        <input type="text" name="description" id="description">
-        <label for="merchant_select">Merchant</label>
-        <select name="merchant_select" id="merchant_select" required>
-            {% for merchant in merchants %}
-                <option value="{{ merchant }}">{{ merchant }}</option>
-            {% endfor %}
-        </select>
-        <label for="category_select">Category</label>
-        <select name="category_select" id="category_select" required>
-            {% for category in categories %}
-                <option value="{{ category }}">{{ category }}</option>
-            {% endfor %}
-        </select>
-        <input type="submit" value="Add Transaction">
+        <div>
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date" required>
+        </div>
+        <div>
+            <label for="amount">Amount</label>
+            <input type="number" step="0.01" name="amount" id="amount" required>
+        </div>
+        <div>
+            <label for="description">Description</label>
+            <input type="text" name="description" id="description">
+        </div>
+        <div>
+            <label for="merchant_select">Merchant</label>
+            <select name="merchant_select" id="merchant_select" required>
+                {% for merchant in merchants %}
+                    <option value="{{ merchant }}">{{ merchant }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="category_select">Category</label>
+            <select name="category_select" id="category_select" required>
+                {% for category in categories %}
+                    <option value="{{ category }}">{{ category }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="submit-button">
+            <input type="submit" value="Add Transaction">
+        </div>
     </form>
-    <table class="table">
-        <thead class="table_header">
-            <tr>
-                <th>Date</th>
-                <th>Merchant</th>
-                <th>Description</th>
-                <th>Amount</th>
-                <th>Category</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for transaction in transactions %}
-            <tr class="table_row">
-                <td>{{ transaction.date }}</td>
-                <td>{{ transaction.simplename }}</td>
-                <td>{{ transaction.description }}</td>
-                <td>{{ transaction.amount }}</td>
-                <td>{{ transaction.name }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div>
+        <table class="table">
+            <thead class="table_header">
+                <tr>
+                    <th>Date</th>
+                    <th>Merchant</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                <tr class="table_row">
+                    <td>{{ transaction.date }}</td>
+                    <td>{{ transaction.simplename }}</td>
+                    <td>{{ transaction.description }}</td>
+                    <td>{{ transaction.amount }}</td>
+                    <td>{{ transaction.name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

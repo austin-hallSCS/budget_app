@@ -1,24 +1,60 @@
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #514663;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    font: bold 1.5rem sans-serif;
+}
+
+.sidebar a {
+    display: block;
+    color: #F7EDE2;
+    padding: 16px;
+    text-decoration: none;
+    transition: background-color 0.5s;
+}
+
+.sidebar a:hover {
+    background-color: #658E9C;
+}
+
 body {
+    margin: 0;
     font-family: 'Open Sans', sans-serif;
-    line-height: 1.5
+    line-height: 1.5;
+    background-color: #F7EDE2;
+}
+
+main {
+    margin: 0 auto;
+    padding: 4rem 0;
+    width: 90%;
+    max-width: 60rem;
 }
 
 table {
     text-align: left;
-    border-collapse: collapse;
-    --color: #d0d0f5;
+    margin: 1rem 0rem;
+    --color: #658E9C;
+    width: 100%
+
 }
 
 thead {
-    border-block-end: 2px solid;
     background: var(--color);
     position: sticky;
     left: 0;
-    border-inline-end: none;
+}
+
+tbody tr:nth-child(odd) {
+    background: color-mix(in srgb, var(--color), transparent 60%);
 }
 
 tbody tr:nth-child(even) {
-    background: color-mix(in srgb, var(--color), transparent 60%);
+    background: color-mix(in srgb, var(--color), transparent 40%);
 }
 
 tr {
@@ -27,6 +63,7 @@ tr {
 
 th,
 td {
+    border-radius: .20rem;
     padding: 0.25rem 0.75rem;
 }
 
@@ -36,17 +73,56 @@ caption {
 }
 
 form {
-    padding: 1.25rem 0rem;
+    box-sizing: border-box;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #658E9C;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 2rem;
 }
 
+.submit-button {
+    grid-column: 2 / span 3;
+}
+
+
+label {
+    display: inline-block;
+    font: bold 1.5rem sans-serif;
+    margin-bottom: 0.5rem;
+}
 button,
 input,
-select,
-text {
-    font-family: inherit;
-    font-size: 100%;
-    width: 150px;
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+input,
+select {
+    border: 2px solid #F7EDE2;
+    background-color: #F7EDE2;
+    border-radius: .50rem;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+}
+
+input[type="submit"] {
+    border: #8CBA80;
+    background-color: #8CBA80;
+    font: bold 1.5rem sans-serif;
+    transition: background-color 0.5s;
+}
+
+input[type="submit"]:hover {
+    background-color: #a6dd99;
 }

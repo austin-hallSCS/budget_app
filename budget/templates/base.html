@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<title>{% block title %}{% endblock %} - Budget</title>
+<title>Budget</title>
+
+<div class="sidebar">
+    <a href="{{ url_for('transactions.index') }}">Home</a>
+    <a href="">Merchants</a>
+    <a href="">Categories</a>
+</div>
 
 <section class="content">
     <header>
         {% block header %}{% endblock %}
     </header>
-    {% block content %}{% endblock %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 </section>
