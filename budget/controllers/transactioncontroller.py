@@ -18,7 +18,7 @@ def Add_Transaction(data):
 
     # If merchant does not already exist, make a new one
     if new_transaction.merchant_id == None:
-        new_merchant_data = {"name": data["merchant"], "simplename": "", "category": data["category"]}
+        new_merchant_data = {"name": "", "simplename": data["merchant"], "category": data["category"]}
         merchantcontroller.Add_Merchant(new_merchant_data)
         new_transaction.mercant_id = merchantcontroller.Get_Merchant_ID(data["merchant"])
 

@@ -34,3 +34,19 @@ th,
 caption {
     text-align: start;
 }
+
+form {
+    padding: 1.25rem 0rem;
+}
+
+button,
+input,
+select,
+text {
+    font-family: inherit;
+    font-size: 100%;
+    width: 150px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}

@@ -5,6 +5,27 @@
 {% endblock %}
 
 {% block content %}
+    <form method="post">
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date" required>
+        <label for="amount">Amount</label>
+        <input type="number" step="0.01" name="amount" id="amount" required>
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description">
+        <label for="merchant_select">Merchant</label>
+        <select name="merchant_select" id="merchant_select" required>
+            {% for merchant in merchants %}
+                <option value="{{ merchant }}">{{ merchant }}</option>
+            {% endfor %}
+        </select>
+        <label for="category_select">Category</label>
+        <select name="category_select" id="category_select" required>
+            {% for category in categories %}
+                <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Add Transaction">
+    </form>
     <table class="table">
         <thead class="table_header">
             <tr>
