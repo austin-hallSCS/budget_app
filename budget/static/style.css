@@ -73,6 +73,7 @@ caption {
 }
 
 form {
+    color: #F7EDE2;
     box-sizing: border-box;
     padding: 2rem;
     border-radius: 1rem;
@@ -117,12 +118,13 @@ select {
 }
 
 input[type="submit"] {
-    border: #8CBA80;
-    background-color: #8CBA80;
+    color: #F7EDE2;
+    border: #88B17E;
+    background-color: #88B17E;
     font: bold 1.5rem sans-serif;
     transition: background-color 0.5s;
 }
 
 input[type="submit"]:hover {
-    background-color: #a6dd99;
+    background-color: #8CBA80;
 }
