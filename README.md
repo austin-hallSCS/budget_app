@@ -13,7 +13,7 @@ Shows all transactions in the database, and has a form to add transactions.
 
 ## Creating/Populating DB
 - Open a terminal in the top-level directory, activate the venv (.venv/scripts/activate on powershell, not sure what it is on linux/macOS)
-- Open the flask shell:
+- Open the flask shell:\
       `flask --app budget shell`
 - Import the database connection:
       `from budget.extensions import db`
