@@ -13,3 +13,8 @@ def Get_Category_ID(name):
         return None
     else:
         return result[0].category_id
+    
+def Add_Category(name):
+    new_category = Category(name=name)
+    db.session.add(new_category)
+    db.session.commit()
