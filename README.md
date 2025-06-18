@@ -3,15 +3,15 @@
 Shows all transactions in the database, and has a form to add transactions.
 
 
-# TO INSTALL:
+## Installation
 
-## Setup
+### Setup
 - Download the files, open in the IDE of your choice (I use VSCode so IDK if these steps will work with a different one)
 - Create your .venv, install all the modules from "requirements.txt"
 - Create two files inside the top-level directory: "database.db" and ".env"
     - in the .env file, add a secret key ("SECRET_KEY='YOURSECRETKEYHERE'")
 
-## Creating/Populating DB
+### Creating/Populating DB
 - Open a terminal in the top-level directory, activate the venv (.venv/scripts/activate on powershell, not sure what it is on linux/macOS)
 - Open the flask shell:\
       `flask --app budget shell`
