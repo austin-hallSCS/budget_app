@@ -23,12 +23,12 @@ Shows all transactions in the database, and has a form to add transactions.
   - First, you'll need to import the "Category" and "Merchant" model classes. and the Add functions under the "controllers" folder:\
         `from budget.models.models import Category, Merchant`\
         `from budget.controllers.categorycontroller import Add_Category`\
-        `from budget.controllers.merchantcontroller import Add_Merchant`\
+        `from budget.controllers.merchantcontroller import Add_Merchant`
   - You'll need to add the categories first, as the Merchants need a 'category_id', which is linked to a row on category_table\
-        `Add_Category(name)`\
+        `Add_Category(name)`
   - The Add_Merchant function takes a dictionary as an argument\
         `data = {"name": "name", "category": "category:}`\
-        `Add_Merchant(data)`\
+        `Add_Merchant(data)`
 
 
 After setting up and creating your db, you should be good to go!
