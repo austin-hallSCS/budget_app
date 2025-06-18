@@ -5,11 +5,11 @@ from budget.models.models import Category, Merchant, Transaction
 from budget.controllers import merchantcontroller, categorycontroller
 
 def Get_All_Transactions_View():
-    result = db.session.execute(select(Transaction.transaction_date,
-                                       Transaction.transaction_amount,
-                                       Transaction.transaction_description,
-                                       Merchant.merchant_name,
-                                       Category.category_name).select_from(Transaction).join(Category).join(Merchant)).all()
+    result = db.session.query(Transaction.transaction_date,
+                              Transaction.transaction_amount,
+                              Transaction.transaction_description,
+                              Merchant.merchant_name,
+                              Category.category_name).join(Merchant, Merchant.merchant_id == Transaction.merchant_id, isouter=True).join(Category, Category.category_id == Transaction.category_id).order_by(Transaction.transaction_date).all()
     return result
 
 def Add_Transaction(data):
