@@ -8,13 +8,13 @@ def Get_All_Categories_View():
     return result
 
 def Get_Category_ID(name):
-    result = db.session.execute(select(Category).where(Category.name == name)).first()
+    result = db.session.execute(select(Category).where(Category.category_name == name)).first()
     if not result:
         return None
     else:
         return result[0].category_id
     
 def Add_Category(name):
-    new_category = Category(name=name)
+    new_category = Category(category_name=name)
     db.session.add(new_category)
     db.session.commit()

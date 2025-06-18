@@ -15,11 +15,11 @@ def index():
 
     # Query for all merchants in db, make a list of the simplenames of each
     allmerchants = Get_All_Merchants_View()
-    merchantlist = [x.name for x in allmerchants]
+    merchantlist = [x.merchant_name for x in allmerchants]
 
     # Query for all categories in db, make a list
     allcategories = Get_All_Categories_View()
-    categorylist = [x.name for x in allcategories]
+    categorylist = [x.category_name for x in allcategories]
 
     if request.method == "POST":
         new_transaction = {"date": datetime.datetime.strptime(request.form["date"], "%Y-%m-%d"),

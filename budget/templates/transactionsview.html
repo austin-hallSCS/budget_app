@@ -48,11 +48,11 @@
             <tbody>
                 {% for transaction in transactions %}
                 <tr class="table_row">
-                    <td>{{ transaction.date }}</td>
-                    <td>{{ transaction.simplename }}</td>
-                    <td>{{ transaction.description }}</td>
-                    <td>{{ transaction.amount }}</td>
-                    <td>{{ transaction.name }}</td>
+                    <td>{{ transaction.transaction_date }}</td>
+                    <td>{{ transaction.merchant_name }}</td>
+                    <td>{{ transaction.transaction_description }}</td>
+                    <td class="number-cell">${{ transaction.transaction_amount }}</td>
+                    <td>{{ transaction.category_name }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

@@ -40,7 +40,6 @@ table {
     margin: 1rem 0rem;
     --color: #658E9C;
     width: 100%
-
 }
 
 thead {
@@ -67,9 +66,8 @@ td {
     padding: 0.25rem 0.75rem;
 }
 
-th,
-caption {
-    text-align: start;
+td.number-cell {
+    text-align: right;
 }
 
 form {
