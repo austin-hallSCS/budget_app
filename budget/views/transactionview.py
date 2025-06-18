@@ -15,7 +15,7 @@ def index():
 
     # Query for all merchants in db, make a list of the simplenames of each
     allmerchants = Get_All_Merchants_View()
-    merchantlist = [x.simplename for x in allmerchants]
+    merchantlist = [x.name for x in allmerchants]
 
     # Query for all categories in db, make a list
     allcategories = Get_All_Categories_View()

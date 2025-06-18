@@ -12,7 +12,7 @@ class Category(db.Model):
     __tablename__ = "category_table"
 
     category_id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), nullable=False)
+    name = db.Column(db.String(50), nullable=False, unique=True)
     transactions = db.relationship("Transaction", backref="category")
     merchants = db.relationship("Merchant", backref="category")
 
@@ -24,7 +24,6 @@ class Merchant(db.Model):
 
     merchant_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False, unique=True)
-    simplename = db.Column(db.String(50))
     category_id = db.Column(db.Integer, db.ForeignKey('category_table.category_id'))
     transactions = db.relationship("Transaction", backref="merchant")
 
