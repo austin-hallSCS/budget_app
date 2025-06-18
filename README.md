@@ -20,8 +20,7 @@ Shows all transactions in the database, and has a form to add transactions.
 - Create all tables in the database:\
       `db.create_all()`
 - For now, you'll have to manually insert entries into the merchants and category databases. I'm working on adding default ones that populate automatically, and a way to add them through the front end.
-  - First, you'll need to import the "Category" and "Merchant" model classes. and the Add functions under the "controllers" folder:\
-        `from budget.models.models import Category, Merchant`\
+  - First, you'll need to import the Add functions under the "controllers" folder:\
         `from budget.controllers.categorycontroller import Add_Category`\
         `from budget.controllers.merchantcontroller import Add_Merchant`
   - You'll need to add the categories first, as the Merchants need a 'category_id', which is linked to a row on category_table\
