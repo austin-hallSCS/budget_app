@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="post">
+        <div>
+            <label for="merchant_name">Name</label>
+            <input type="text" name="merchant_name" id="merchant_name">
+        </div>
+        <div>
+            <label for="category_select">Category</label>
+            <select name="category_select" id="category_select" required>
+                {% for category in categories %}
+                    <option value="{{ category }}">{{ category }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="submit-button">
+            <input type="submit" value="Add Merchant">
+        </div>
+    </form>
+    <div>
+        <table class="table">
+            <thead class="table_header">
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for merchant in merchants %}
+                <tr class="table_row">
+                    <td>{{ merchant.merchant_name }}</td>
+                    <td>{{ merchant.category_name }}</td>
+                    {% if merchant.total == None %}
+                        <td class="number-cell">$0</td>
+                    {% else %}
+                        <td class="number-cell">${{ merchant.total }}</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

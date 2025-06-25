@@ -10,7 +10,7 @@ def create_app():
     
     db.init_app(app)
 
-    from .views.transactionview import bp
+    from .views.routes import bp
     app.register_blueprint(bp)
 
     return app
