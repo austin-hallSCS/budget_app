@@ -1,9 +1,9 @@
 .sidebar {
     margin: 0;
-    padding: 4rem 2rem 0rem 2rem;
     width: auto;
     position: fixed;
     height: 100%;
+    padding-top: 3.5rem;
 
     background-color: #514663;
     font: bold 1.5rem sans-serif;

@@ -8,11 +8,14 @@ def Get_All_Categories():
     return result
 
 def Get_All_Categories_Totals():
-    result = db.session.query(Category.category_name, func.round(func.sum(
+    result = db.session.query(
+        Category.category_name, func.round(func.sum(
         Transaction.transaction_amount), 2).label("total")).group_by(
-        Transaction.category_id).join(
-        Transaction, Transaction.category_id == Category.category_id, isouter=True).all()
+        Category.category_id).join(
+        Transaction, Transaction.category_id == Category.category_id, isouter=True).order_by(
+        Category.category_name).all()
     return result
+
 def Get_Category_ID(name):
     result = db.session.query(Category).where(Category.category_name == name).first()
     if not result:

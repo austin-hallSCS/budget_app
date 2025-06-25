@@ -13,7 +13,7 @@ def index():
     # Query for all transactions in db
     data = Get_All_Transactions_View()
 
-    # Query for all merchants in db, make a list of the simplenames of each
+    # Query for all merchants in db, make a list of the merchant_name of each
     allmerchants = Get_All_Merchants()
     merchantlist = [x.merchant_name for x in allmerchants]
 
