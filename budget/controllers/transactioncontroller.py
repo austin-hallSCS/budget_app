@@ -26,7 +26,7 @@ def Add_Transaction(data):
     if new_transaction.merchant_id == None:
         new_merchant_data = {"name": data["merchant"], "category": data["category"]}
         merchantcontroller.Add_Merchant(new_merchant_data)
-        new_transaction.mercant_id = merchantcontroller.Get_Merchant_ID(data["merchant"])
+        new_transaction.merchant_id = merchantcontroller.Get_Merchant_ID(data["merchant"])
 
     db.session.add(new_transaction)
     db.session.commit()

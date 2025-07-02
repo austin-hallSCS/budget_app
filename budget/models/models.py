@@ -17,7 +17,8 @@ class Category(db.Model):
     merchants = db.relationship("Merchant", backref="category")
 
     def __repr__(self):
-        return self.category_name
+        cls = self.__class__.__name__
+        return f"{cls}(category_id={self.category_id}, category_name='{self.category_name}')"
 
 class Merchant(db.Model):
     __tablename__ = "merchant_table"
@@ -28,7 +29,8 @@ class Merchant(db.Model):
     transactions = db.relationship("Transaction", backref="merchant")
 
     def __repr__(self):
-        return self.merchant_name
+        cls = self.__class__.__name__
+        return f"{cls}(merchant_id={self.merchant_id}, merchant_name='{self.merchant_name}', category_id={self.category_id})"
 
     
 class Transaction(db.Model):
@@ -42,4 +44,5 @@ class Transaction(db.Model):
     category_id = db.Column(db.Integer, db.ForeignKey('category_table.category_id'))
 
     def __repr__(self):
-        return f"{self.transaction_date} - {self.transaction_description}: {self.transaction_amount}"
+        cls = self.__class__.__name__
+        return f"{cls}(transaction_id={self.transaction_id}, transaction_date={self.transaction_date}, transaction_amount={self.transaction_amount}, transaction_description='{self.transaction_description}', merchant_id={self.merchant_id}, category_id={self.category_id})"

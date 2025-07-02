@@ -23,6 +23,13 @@ def Get_Merchant_ID(name):
         return None
     else:
         return result.merchant_id
+    
+def Get_Merchant_Category_ID(name):
+    result = db.session.query(Merchant.category_ID).where(Merchant.merchant_name == name).first()
+    if not result:
+        return None
+    else:
+        return result.category_id
 
 def Add_Merchant(data):
     existing = Get_Merchant_ID(data["name"])

@@ -16,15 +16,17 @@
         </div>
         <div>
             <label for="merchant_select">Merchant</label>
-            <select name="merchant_select" id="merchant_select" required>
+            <input list="merchants_list" name="merchant_select" id="merchant_select">
+            <datalist name="merchants_list" id="merchants_list">
                 {% for merchant in merchants %}
                     <option value="{{ merchant }}">{{ merchant }}</option>
                 {% endfor %}
-            </select>
+            </datalist>
         </div>
         <div>
             <label for="category_select">Category</label>
             <select name="category_select" id="category_select" required>
+                <option value="None"></option>
                 {% for category in categories %}
                     <option value="{{ category }}">{{ category }}</option>
                 {% endfor %}
